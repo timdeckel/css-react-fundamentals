@@ -1,6 +1,9 @@
 'use client'
 import { useEffect, useState } from 'react';
 import React from 'react'
+import BasicButtons from '../MuiButton';
+import MuiDivider from '../MuiDivider'
+
 
 const ToDoList = () => {
 
@@ -57,6 +60,7 @@ const ToDoList = () => {
                 Add Item
                 </button>
             </div>
+            <MuiDivider></MuiDivider>
             <div className="flex bg-blue-400 w-full h-5/6">
             <ul className="list-disc p-2 min-h-8 w-full">
             {items.map((items, index) => (
@@ -65,16 +69,12 @@ const ToDoList = () => {
                     className="flex justify-between items-center mb-2 p-2 border-2 bg-blue-600 rounded"
                 >
                     {items}
-                    <button
-                    onClick={() => removeItem(index)}
-                    className="bg-red-500 text-white p-1 rounded"
-                    >
-                    Remove
-                    </button>
+                    <BasicButtons onClick={() => removeItem(index)} ></BasicButtons>
                 </li>
                 ))}
             </ul>
             </div>
+            
         </div>
     </>
   )

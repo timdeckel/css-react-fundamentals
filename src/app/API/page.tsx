@@ -1,5 +1,9 @@
 'use client'
 import { useEffect, useState } from 'react';
+import StyledDiv from '../components/StyledDiv'
+import StyledParagraph from '../components/StyledParagraph'
+import Footer from '../components/StyledFooter'
+import Wrapper from '../components/StyledWrapper'
 
 const API = () => {
   
@@ -20,19 +24,14 @@ const API = () => {
     }
   }
 
-
   return (
-    <div className="h-[90vh] w-screen flex items-center justify-center bg-gray-100">
-        <div className="flex flex-col items-center bg-gray-500 md:w-4/6 w-5/6 p-8 rounded gap-8">
-         <p>{joke}</p>
-          <button
-          onClick={getData}
-          className='bg-gray-200 p-2'
-          >
-            click for a joke.
-          </button>
-        </div>
-    </div>
+    <Wrapper variant="outer">
+        <Wrapper variant="inner" >
+         <StyledParagraph>{joke}</StyledParagraph>
+          <StyledDiv onClick={getData}>click for a joke.</StyledDiv>
+        </Wrapper>
+        <Footer></Footer>
+    </Wrapper>
   );
 }
 

@@ -1,13 +1,18 @@
-import React from 'react'
-import Link from 'next/link'
+import React from 'react';
+import Link from 'next/link';
+import { AppBar, Toolbar, Typography, Button } from '@mui/material';
 
 export default function Header() {
   return (
-    <div className='flex h-[10%] w-full items-center pl-5 bg-gray-300'>
-        <Link rel="stylesheet" href="/">
-            <div className="p-3">HOME</div>
+    <AppBar position="sticky" sx={{ backgroundColor: '#6b7280', color: 'black'  }}> 
+      <Toolbar className="flex justify-between">
+        <Link href="/" passHref>
+          <Button color="inherit">HOME</Button>
         </Link>
-        <p className='ml-8'> click home to get to the start!</p>
-    </div>
-  )
+        <Typography variant="body1" sx={{ ml: 2, color: 'black' }}>
+          Click home to get to the start!
+        </Typography>
+      </Toolbar>
+    </AppBar>
+  );
 }
